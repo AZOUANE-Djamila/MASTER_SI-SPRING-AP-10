@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PatientRepository extends MongoRepository<Patient, Integer> {       
 	
-    //@Query(value="{category:'?0'}", fields="{'name' : 1, 'quantity' : 1}")
+    //@Query
 	 public List<Patient> findAll();
 }
