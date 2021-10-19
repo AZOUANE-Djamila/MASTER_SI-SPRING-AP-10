@@ -1,18 +1,18 @@
+package MASTER_SISPRING.AP10;
+
 /**
  * @author AZOUANE DJAMILA
  *
  */
-package patient;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface PatientRepository extends MongoRepository<Patient, Integer> {       
-	
-    //@Query
-	 public List<Patient> findAll();
+public interface PatientRepository extends MongoRepository<Patient, ObjectId> {       
+		 public List<Patient> findAll();
 }

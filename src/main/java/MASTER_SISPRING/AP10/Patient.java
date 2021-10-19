@@ -1,20 +1,23 @@
-package patient;
+package MASTER_SISPRING.AP10;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Document(collection="patients")
 public class Patient {
 	
 	@Id
-	private int id;
+	private ObjectId _id;
 	
-	private String nom,prenom,date,sexe;
-	public int getId() {
-		return id;
+	private String nom,prenom,sexe;
+	private DateTimeFormat date;
+	public ObjectId getId() {
+		return _id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setId(ObjectId id) {
+		this._id = id;
 	}
 	public String getNom() {
 		return nom;
@@ -28,10 +31,10 @@ public class Patient {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public String getDate() {
+	public DateTimeFormat getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(DateTimeFormat date) {
 		this.date = date;
 	}
 	public String getSexe() {
@@ -45,9 +48,9 @@ public class Patient {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Patient(int id, String nom, String prenom, String date, String sexe) {
+	public Patient(ObjectId id, String nom, String prenom, DateTimeFormat date, String sexe) {
 		super();
-		this.id = id;
+		this._id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.date = date;
